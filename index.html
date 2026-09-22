@@ -140,39 +140,39 @@
             color: #cccccc;
         }
 
-        /* Sección Inferior: 3 Imágenes */
-        .bottom-images {
+        /* SECCIÓN INFERIOR: 3 IMÁGENES CORREGIDAS */
+        .bottom-gallery {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            justify-content: center; /* Centra las imágenes */
             gap: 20px;
+            flex-wrap: wrap;
             margin-top: 20px;
         }
 
-        .img-box {
-            flex: 1;
-            min-width: 250px;
-            height: 200px;
+        .image-box {
+            width: 250px;  /* Ancho fijo de la imagen */
+            height: 250px; /* Alto fijo de la imagen */
+            flex: none;    /* Evita que se encojan o estiren */
             border-radius: 15px;
             overflow: hidden;
-            border: 3px solid #ffd700;
-            transition: transform 0.3s;
+            border: 3px solid #FFD700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .img-box:hover {
-            transform: translateY(-10px);
+        .image-box:hover {
+            transform: translateY(-10px); /* Efecto al pasar el mouse */
+            box-shadow: 0 15px 25px rgba(255, 215, 0, 0.2);
         }
 
-        .img-box img {
+        .image-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Evita que las fotos se deformen */
         }
 
         /* Responsividad para celulares */
         @media (max-width: 768px) {
             .right-text { text-align: center; }
-            .bottom-images { flex-direction: column; }
         }
     </style>
 </head>
@@ -224,16 +224,18 @@
         </div>
 
         <!-- SECCIÓN INFERIOR: 3 IMÁGENES -->
-    <div class="bottom-gallery">
-        <div class="image-box">
-            <img src="gael.jpg" alt="Foto Gael">
+        <div class="bottom-gallery">
+            <div class="image-box">
+                <img src="gael.jpg" alt="Foto Gael">
+            </div>
+            <div class="image-box">
+                <img src="lus.jpg" alt="Foto Lus">
+            </div>
+            <div class="image-box">
+                <img src="ola.jpg" alt="Foto Ola">
+            </div>
         </div>
-        <div class="image-box">
-            <img src="lus.jpg" alt="Foto Lus">
-        </div>
-        <div class="image-box">
-            <img src="ola.jpg" alt="Foto Ola">
-        </div>
+        
     </div>
 
 </body>
