@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Amarillas</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Fondo oscuro para resaltar el amarillo */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        /* Sección Superior: Flores y Texto */
+        .top-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* Lado Izquierdo: Ramo de Flores Animadas */
+        .left-flowers {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            height: 350px;
+        }
+
+        .bouquet {
+            position: relative;
+        }
+
+        /* Creación de la flor con CSS */
+        .flower {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Posiciones de las 3 flores del ramo */
+        .f1 { top: 80px; left: -80px; transform: scale(0.8) rotate(-20deg); }
+        .f2 { top: 30px; left: 0px; transform: scale(1.1); z-index: 2; }
+        .f3 { top: 80px; left: 80px; transform: scale(0.8) rotate(20deg); }
+
+        .petals {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            animation: spin 15s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .petal {
+            position: absolute;
+            width: 30px;
+            height: 90px;
+            background: #ffd700; /* Amarillo */
+            border-radius: 50px;
+            top: 5px;
+            left: 35px;
+            transform-origin: center calc(100% - 45px);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Rotación de cada pétalo */
+        .petal:nth-child(1) { transform: rotate(0deg); }
+        .petal:nth-child(2) { transform: rotate(45deg); }
+        .petal:nth-child(3) { transform: rotate(90deg); }
+        .petal:nth-child(4) { transform: rotate(135deg); }
+        .petal:nth-child(5) { transform: rotate(180deg); }
+        .petal:nth-child(6) { transform: rotate(225deg); }
+        .petal:nth-child(7) { transform: rotate(270deg); }
+        .petal:nth-child(8) { transform: rotate(315deg); }
+
+        .center {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #8b4513; /* Centro café */
+            border-radius: 50%;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+        }
+
+        .stem {
+            position: absolute;
+            width: 8px;
+            height: 200px;
+            background: #2e8b57; /* Tallo verde */
+            top: 80px;
+            left: 46px;
+            z-index: -1;
+            border-radius: 5px;
+        }
+
+        /* Lado Derecho: Textos */
+        .right-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .right-text h1 {
+            color: #ffd700;
+            font-size: 3em;
+            margin: 0 0 10px 0;
+        }
+
+        .right-text h2 {
+            color: #ffb6c1; /* Tono rosado claro para contraste */
+            font-size: 1.5em;
+            margin: 0 0 20px 0;
+            font-weight: 400;
+        }
+
+        .right-text p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        /* Sección Inferior: 3 Imágenes */
+        .bottom-images {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .img-box {
+            flex: 1;
+            min-width: 250px;
+            height: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid #ffd700;
+            transition: transform 0.3s;
+        }
+
+        .img-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsividad para celulares */
+        @media (max-width: 768px) {
+            .right-text { text-align: center; }
+            .bottom-images { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Sección de arriba: Flores (Izquierda) y Texto (Derecha) -->
+        <div class="top-section">
+            
+            <div class="left-flowers">
+                <div class="bouquet">
+                    <!-- Flor 1 -->
+                    <div class="flower f1">
+                        <div class="stem"></div>
+                        <div class="petals">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+                            <div class="center"></div>
+                        </div>
+                    </div>
+                    <!-- Flor 2 (Centro) -->
+                    <div class="flower f2">
+                        <div class="stem"></div>
+                        <div class="petals">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+                            <div class="center"></div>
+                        </div>
+                    </div>
+                    <!-- Flor 3 -->
+                    <div class="flower f3">
+                        <div class="stem"></div>
+                        <div class="petals">
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+                            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+                            <div class="center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-text">
+                <h1>Título Principal</h1>
+                <h2>Subtítulo de tu mensaje aquí</h2>
+                <p>Este es el texto principal. Aquí puedes escribir tu dedicatoria, explicar por qué le regalas estas flores amarillas y expresar lo que sientes. El diseño está preparado para que el texto se acomode automáticamente a un lado del ramo en pantallas grandes, y debajo en teléfonos celulares.</p>
+            </div>
+
+        </div>
+
+        <!-- Sección de abajo: 3 Imágenes -->
+        <div class="bottom-images">
+            <div class="img-box">
+                <!-- Cambia el link de abajo por el de tu foto 1 -->
+                <img src="https://images.unsplash.com/photo-1596438459194-f28bf7ed32dc?w=500&q=80" alt="Foto 1">
+            </div>
+            <div class="img-box">
+                <!-- Cambia el link de abajo por el de tu foto 2 -->
+                <img src="https://images.unsplash.com/photo-1552084117-56a98a94665a?w=500&q=80" alt="Foto 2">
+            </div>
+            <div class="img-box">
+                <!-- Cambia el link de abajo por el de tu foto 3 -->
+                <img src="https://images.unsplash.com/photo-1601626019323-5e90538a7981?w=500&q=80" alt="Foto 3">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
